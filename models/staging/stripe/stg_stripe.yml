@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_payments
+    description: payment transactions by customer_id
+    columns: 
+      - name: id
+        description: primary key for stg_payments
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: primary key for orders
+        tests:
+          - not_null
+      - name: payment_method
+        description: method used to pay transaction
+      - name: status
+        description: '{{ doc("payment_transaction_status")}}'
+      - name: amount
+        description: dollar amount of transaction
+      - name: created_at
+        description: date stamp of payment transaction
