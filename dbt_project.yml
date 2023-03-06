@@ -38,3 +38,9 @@ models:
         +materialized: table
     staging:
       +materialized: view
+  
+
+# Packages dispatch order
+dispatch:
+  - macro_namespace: dbt_utils
+    search_order: [ 'fivetran_utils', 'dbt_utils'] 
